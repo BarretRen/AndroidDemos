@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffffff">
+    <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="true"
+            android:id="@+id/check_box"/>
+    <ImageView android:layout_width="50dp" android:layout_height="50dp"
+            android:background="#ffffff"
+            android:id="@+id/food_img"/>
+    <TextView
+            android:id="@+id/food_name"
+             android:layout_width="100dp"
+           android:layout_height="50dp"
+             android:text="咖啡"
+             android:gravity="center_vertical"
+             android:layout_marginLeft="10dp"
+            android:textSize="18sp" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="50dp"
+            android:text="单价:RMB"
+            android:paddingLeft="20dp"
+            android:textSize="12sp"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="50dp"
+            android:paddingRight="10dp"
+            android:text="18"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:id="@+id/price"/>
+</LinearLayout>
