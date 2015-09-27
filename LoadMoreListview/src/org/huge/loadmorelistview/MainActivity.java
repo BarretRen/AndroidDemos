@@ -1,34 +1,54 @@
 package org.huge.loadmorelistview;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.huge.loadmorelistview.LoadListView.ILoadListener;
+
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.os.Handler;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 
 public class MainActivity extends Activity {
+	private LoadListView listView;
+	private ArrayAdapter<String> adapter;
+	private List<String> datas;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
+		//初始化组件
+		listView=(LoadListView)findViewById(R.id.main);
+		listView.setInterface(new ILoadListener() {
+			@Override
+			public void onLoad() {
+				//添加延时效果
+				Handler handler=new Handler();
+				handler.postDelayed(new Runnable() {
+					@Override
+					public void run() {
+						initMoreDatas();//加载更多数据
+						adapter.notifyDataSetChanged();
+						listView.loadCompleted();//隐藏加载提示
+					}
+				}, 2000);
+			}
+		});
+		datas=new ArrayList<String>();
+		adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,datas);
+		listView.setAdapter(adapter);
+		//初始化数据
+		for(int i=1;i<21;i++){
+			datas.add("数据"+i+" ");
 		}
-		return super.onOptionsItemSelected(item);
+	}
+
+	private void initMoreDatas(){
+		for(int i=1;i<21;i++){
+			datas.add("新数据"+i+" ");
+		}
 	}
 }
