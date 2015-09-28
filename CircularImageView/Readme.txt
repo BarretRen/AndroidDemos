@@ -1,0 +1,14 @@
+ImageView在我们的项目中经常使用，一般ImageView是正方形的，要使用圆形的ImageView可以通过自定义View来实现
+
+自定义控件：
+一般来说，自定义控件都会去重写View的onMeasure方法，因为该方法指定该控件在屏幕上的大小。
+	protected void?onMeasure?(int widthMeasureSpec, int heightMeasureSpec)
+onMeasure传入的两个参数是由上一层控件传入的大小，有多种情况，重写该方法时需要对计算控件的实际大小，然后调用setMeasuredDimension(int, int)设置实际大小。
+
+onMeasure传入的widthMeasureSpec和heightMeasureSpec不是一般的尺寸数值，而是将模式和尺寸组合在一起的数值。
+我们需要通过int mode = MeasureSpec.getMode(widthMeasureSpec)得到模式，用int size =?MeasureSpec.getSize(widthMeasureSpec)得到尺寸。
+mode共有三种情况，取值分别为
+	MeasureSpec.UNSPECIFIED, MeasureSpec.EXACTLY, MeasureSpec.AT_MOST。
+1，MeasureSpec.EXACTLY是精确尺寸，当我们将控件的layout_width或layout_height指定为具体数值时如andorid:layout_width="50dip"，或者为FILL_PARENT是，都是控件大小已经确定的情况，都是精确尺寸。
+2，MeasureSpec.AT_MOST是最大尺寸，当控件的layout_width或layout_height指定为WRAP_CONTENT时，控件大小一般随着控件的子空间或内容进行变化，此时控件尺寸只要不超过父控件允许的最大尺寸即可。因此，此时的mode是AT_MOST，size给出了父控件允许的最大尺寸。
+3，MeasureSpec.UNSPECIFIED是未指定尺寸，这种情况不多，一般都是父控件是AdapterView，通过measure方法传入的模式
