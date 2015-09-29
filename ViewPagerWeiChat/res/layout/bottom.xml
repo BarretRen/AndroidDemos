@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal" 
+    android:background="#FF00FF">
+    <LinearLayout 
+        android:id="@+id/chat"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageButton 
+            android:id="@+id/btn_chat"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="#0000"
+            android:clickable="false"
+            android:src="@drawable/ic_launcher"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="聊天" />
+    </LinearLayout>
+    <LinearLayout 
+        android:id="@+id/pengyouquan"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageButton 
+            android:id="@+id/btn_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="#0000"
+            android:clickable="false"
+            android:src="@drawable/ic_launcher"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="朋友圈" />
+    </LinearLayout>
+    <LinearLayout 
+        android:id="@+id/tongxunlu"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageButton 
+            android:id="@+id/btn_content"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="#0000"
+            android:clickable="false"
+            android:src="@drawable/ic_launcher"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="好友" />
+    </LinearLayout>
+    <LinearLayout 
+        android:id="@+id/set"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageButton 
+            android:id="@+id/btn_set"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="#0000"
+            android:clickable="false"
+            android:src="@drawable/ic_launcher"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="设置" />
+    </LinearLayout>
+
+</LinearLayout>
