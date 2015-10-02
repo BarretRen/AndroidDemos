@@ -1,0 +1,1 @@
+使用google为android提供的Volley网络通信包，进行get和post请求，图片缓存加载等功能

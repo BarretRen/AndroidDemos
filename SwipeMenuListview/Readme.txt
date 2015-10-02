@@ -1,0 +1,1 @@
+使用github上SwipeMenuListview实现QQ中会话项右滑出现操作菜单的功能

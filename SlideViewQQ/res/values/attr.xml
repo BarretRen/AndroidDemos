@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 定义距离屏幕右边缘距离 -->
+    <attr name="rightPadding" format="dimension"></attr>
+    <!-- 加入到UI组件的声明中 -->
+    <declare-styleable name="LeftSlideMenu">
+        <attr name="rightPadding"/>
+    </declare-styleable>
+</resources>
