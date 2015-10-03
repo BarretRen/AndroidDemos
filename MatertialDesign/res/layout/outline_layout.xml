@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TextView 
+        android:id="@+id/clip_outline"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="我是要被裁剪的区域"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:background="#ff00ff"/>
+	<Button 
+	    android:id="@+id/setoutline"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_gravity="center_horizontal"
+	    android:text="关闭轮廓裁剪"/>
+</LinearLayout>

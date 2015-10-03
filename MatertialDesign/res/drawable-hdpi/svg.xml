@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 定义一个svg对象 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:width="256dp"
+    android:height="256dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+    <!-- group这里用于根据原点旋转图形 -->
+        <!-- 绘制图形路径 -->
+    	<path android:fillColor="#0000FF"
+       		 android:pathData="M20.5,9.5
+        			     c-1.955,0,-3.83,1.268,-4.5,3
+        			     c-0.67,-1,732,-2,547,-3,-4.5,-3
+        			     C8.957,9.5,7,11.432,7,14
+        			     c0,3.53,3.793,6.257,9,-11.5
+        			     C25,11.432,23.043,9.5,20.5,9.5z"/>
+</vector>
