@@ -2,22 +2,21 @@ package org.huge.matertialdesign;
 
 import java.util.ArrayList;
 
-import org.huge.matertialdesign.R.id;
+import org.huge.adapter.StraggerRecyclerAdapter;
 
 import android.app.Activity;
 import android.graphics.Outline;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ItemDecoration;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.ImageButton;
 import android.view.ViewOutlineProvider;
+import android.widget.ImageButton;
 
-public class MainActivity extends Activity {
+/*
+ * 类似WP的磁贴，可以大小不一的显示列表项
+ */
+public class StraggerListviewActivity extends Activity{
 	private RecyclerView recyclerView;//新版Listview
 	private View deleteBar;
 	private ImageButton fabView;
@@ -48,31 +47,11 @@ public class MainActivity extends Activity {
 		
 		//获取RecyclerView,使用布局管理器设置布局方向
 		recyclerView=(RecyclerView)findViewById(R.id.recycler_view);
-		final LinearLayoutManager manager=new LinearLayoutManager(this);
+		final StaggeredGridLayoutManager manager=new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL);
 		recyclerView.setLayoutManager(manager);
-		//为RecyclerView设置分隔条
-		ItemDecoration itemDecoration=new MyDefineDivider(this);
-		recyclerView.addItemDecoration(itemDecoration);
 		//设置adapter
-		final SampleRecyclerAdapter adapter=new SampleRecyclerAdapter(data);
+		final StraggerRecyclerAdapter adapter=new StraggerRecyclerAdapter(data);
 		recyclerView.setAdapter(adapter);
-		
-		//设置按钮点击
-		fabView.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				//获取第一个可见列表项的位置
-				int position=manager.findFirstCompletelyVisibleItemPosition();
-				adapter.addItem(position);
-			}
-		});
-		deleteBar.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				int position=manager.findFirstCompletelyVisibleItemPosition();
-				adapter.removeData(position);
-			}
-		});
 	}
 
 	//初始化数据填充

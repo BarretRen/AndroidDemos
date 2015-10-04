@@ -3,9 +3,23 @@
     tools:context="org.huge.matertialdesign.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_gridview"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
-
+        android:title="变成Gridview"/>
+	<item
+        android:id="@+id/action_listview"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="变成Listview"/>
+	<item
+        android:id="@+id/action_staggered"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="变成瀑布流"/>
+	<item
+        android:id="@+id/action_hor_gridview"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="变成水平的Gridview"/>
 </menu>

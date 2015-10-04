@@ -11,6 +11,7 @@
         android:textSize="20sp"
         android:padding="30dp"
         android:fontFamily="san-serif-light"
-        android:text="Sample text"/>
+        android:text="Sample text"
+        android:background="#ff0fff"/>
 
 </LinearLayout>

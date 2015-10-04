@@ -1,4 +1,4 @@
-package org.huge.matertialdesign;
+package org.huge.adapter;
 
 import android.content.Context;
 import android.content.res.TypedArray;
